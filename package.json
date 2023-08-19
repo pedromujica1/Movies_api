@@ -1,0 +1,23 @@
+{
+  "name": "translation_api",
+  "version": "1.0.0",
+  "description": "api project for IFPR",
+  "main": "OpenAI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedromujica1/translation_api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedromujica1/translation_api/issues"
+  },
+  "homepage": "https://github.com/pedromujica1/translation_api#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "openai": "^4.0.1"
+  }
+}
