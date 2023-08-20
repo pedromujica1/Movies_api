@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script src="frontend.js" type='module' defer></script>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
-    <title>Flaticon API</title>
-    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <title>DALL·E API</title>
 </head>
 <body>
-    <h1>
-        hello
-    </h1>
+    <header>
+        <h1 class="title">DALL·E API</h1>
+        <img src="https://images.openai.com/blob/c3ca91b1-f41d-4ba0-84b2-84b2b9c0530e/dall-e-api-now-available-in-public-beta.jpg?width=1000" alt="" style="width: 350px; height:350px">
+    </header>
+    <main class="container">
 
-    
+        <div class="row">
+            <div>
+                <p>DALL-E é um programa de inteligência artificial que cria imagens a partir de descrições textuais. Ele usa uma versão de 12 bilhões de parâmetros do modelo GPT-3 Transformer para interpretar entradas de linguagem natural e gerar imagens. A API do DALL-E ainda está em fase BETA.  <a href="https://pt.wikipedia.org/wiki/DALL-E">Continue lendo aqui</a></p>
+               
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="inputbox">
+                <input type="text" id="descricao" required>
+                <label for="descricao">Descreva a imagem para ser gerada</label>
+                <p></p>
+            </div>
+            
+        </div>
+        
 
-    
+        <div class="row">
+            
+            <div class="inputbox">
+                <input type="text" id="tamanho" required>
+                <label for="tamanho">Tamanho da imagem: 1024x1024</label>
+            </div>
+            <div class="inputbox">
+                <input type="number" id="numeroImg" required>
+                <label for="numeroImg">Número de imagens</label>
+            </div>
+            
+        </div>
+        <div class="row">
+            <button>Gerar imagem</button>
+        </div>
+        
+        
+    </main>
+    <footer>
+        Pedro Miotto Mujica &#169 2023
+    </footer>
 </body>
 </html>
