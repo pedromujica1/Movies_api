@@ -12,6 +12,8 @@
     <header>
         <h1 class="title">APOD API</h1>
         <img src="https://apod.nasa.gov/apod/image/1206/ldn673s_block.jpg" alt="" >
+        <p>Explicação</p>
+        <p></p>
 
         <p>O Astronomy Picture of the Day é um website mantido pela NASA e pela Universidade Tecnológica de Michigan. De acordo com o website, "cada dia uma imagem ou foto diferente do universo é mostrada, com uma curta explicação escrita por um astrônomo profissional". </p>
         <p></p>
@@ -33,7 +35,7 @@
 
             
             <div class="inputbox">
-                <input type="date" id="inData" required>
+                <input type="date" id="inData">
                 <label for="inData">Insira a data para ver a foto do dia </label>
                 
             </div>
@@ -44,14 +46,18 @@
     
         <div class="row">
             
-            <button>Gerar imagem</button>
+            <button type="submit">Gerar imagem</button>
+    
         </div>
+        
+
 
         <h3 style="text-align: center;"></h3>
-        <h2 id="title"></h2>
-        <h3>Date: <span id="date"></span></h3>
-        <img id="pic" src="" alt="NASA Picture Of The Day" width="100%">
-        <p id="explanation"></p>
+        <h2 style="text-align: center;" id="title"></h2>
+        <h3 style="text-align: center;">Date: <span id="date"></span></h3>
+        <img id="pic" src=""  width="100%" style="align-content: center;">
+        <p style="text-align:center">Explicação da imagem por um astrônomo</p>
+        <p style="text-align:center" id="explanation"></p>
     </form>
     <footer>
         Pedro Miotto Mujica &#169 2023

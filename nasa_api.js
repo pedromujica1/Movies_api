@@ -14,12 +14,16 @@ function VerificarData(data) {
 
     if (data_inserida>data_atual){
         resp1.innerText=`Você ainda não pode viajar para o futuro! hahaha`;
+        limparDados()
         return false
     }
     return true
 }
 
 async function gerarFoto(url) {
+    limparDados()
+ 
+
     //Transformando dados do request em JSON
     const dados = await fetch(url);
         
@@ -32,24 +36,34 @@ async function gerarFoto(url) {
     
     //Verificando se request foi realizado com sucesso
     if(dados_json.status == 200 && dados_json.readyState == 4){
-        preencherDados(dados_json)
+        resp1.innerText=`Algo deu errado no request. Tente novamente!`;
     }
-    else{resp1.innerText=`Algo deu errado no request. Tente novamente!`;}
+    else{preencherDados(dados_json)}
 }
 
+//preencher dados
 function preencherDados(response_data){
     document.getElementById("title").textContent = response_data.title;
     document.getElementById("date").textContent = response_data.date;
     document.getElementById("pic").src = response_data.hdurl;
     document.getElementById("explanation").textContent = response_data.explanation;
 }
+//limpar formulario
+function limparDados(){
+    document.getElementById("title").textContent = "";
+    document.getElementById("date").textContent = "";
+    document.getElementById("pic").src = "";
+    document.getElementById("explanation").textContent = "";
+}
 
-frm.addEventListener("submit",(e) => {
+
+frm.addEventListener("click",(e) => {
     
     e.preventDefault();
 
     const data_str = String(data.value);
     const api_key = key()
+
     
     //String da data
     console.log(data_str)
@@ -62,4 +76,6 @@ frm.addEventListener("submit",(e) => {
         gerarFoto(url)
     }
     else{console.log("Data errada")}
+
 });
+
