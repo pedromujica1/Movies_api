@@ -27,10 +27,14 @@
         
 
         
-        <div class="row">
+        <div class="flex">
+            <p style="text-align:right;">Formato: dia/mes/ano</p>
+            <p></p>
+
+            
             <div class="inputbox">
                 <input type="date" id="inData" required>
-                <label for="inData">Insira a data para ver a foto do dia(dia/mes/ano) </label>
+                <label for="inData">Insira a data para ver a foto do dia </label>
                 
             </div>
             
@@ -42,6 +46,12 @@
             
             <button>Gerar imagem</button>
         </div>
+
+        <h3 style="text-align: center;"></h3>
+        <h2 id="title"></h2>
+        <h3>Date: <span id="date"></span></h3>
+        <img id="pic" src="" alt="NASA Picture Of The Day" width="100%">
+        <p id="explanation"></p>
     </form>
     <footer>
         Pedro Miotto Mujica &#169 2023
