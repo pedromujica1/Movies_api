@@ -12,9 +12,17 @@
 }
 header {
     margin-top: 2rem;
+    text-align: center;
+    
 }
 header img{
     width: 50rem;
+    
+    
+    left: 0;
+    right: 0;
+    margin: auto;
+    align-content: center;
 }
 
 body {
@@ -86,7 +94,8 @@ body {
     height: 100%;
 }
 
-.inputbox input:focus + label {
+.inputbox input:focus + label,
+.inputbox input:valid + label {
     top: -40px;
     left: 0;
 }
