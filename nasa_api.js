@@ -1,7 +1,6 @@
 //4c6cjMgLFIGafGCbJhm7fQ9bpsqfN9HEJbW5XANf
 
 //criar referências ao elemento da pagina
-const frm = document.querySelector("form");
 const data = document.getElementById("inData")
 const resp1 = document.querySelector("h3");
 const foto_atual = document.getElementById("inFotoAtual")
@@ -20,6 +19,7 @@ function VerificarData(data) {
     return true
 }
 
+//Função para fazer o fetch e gerar os dados em json
 async function gerarFoto(url) {
  
 
@@ -56,11 +56,13 @@ function limparDados(){
     document.getElementById("inExplicacao").value = "";
 }
 
-
-foto_atual.addEventListener("click",(e) => {
+//Gera foto diária
+document.getElementById("inFotoAtual").addEventListener("click",(e) => {
+    e.preventDefault()
+    console.log
     //Fetch que retorna JSON
     //Default da consulta da API é o dia atual
-    fetch('https://api.nasa.gov/planetary/apod?api_key=4c6cjMgLFIGafGCbJhm7fQ9bpsqfN9HEJbW5XANf')
+    gerarFoto("https://api.nasa.gov/planetary/apod?api_key=4c6cjMgLFIGafGCbJhm7fQ9bpsqfN9HEJbW5XANf")
     .then(response => response.json())
     .then(data => {
     console.log(data)
@@ -71,8 +73,8 @@ foto_atual.addEventListener("click",(e) => {
 
 })
 
-
-frm.addEventListener("click",(e) => {
+//Gera imagem de acordo com a data inserida após clicar no botão
+document.getElementById("btnImagem").addEventListener("click",(e) => {
     
     e.preventDefault();
 
