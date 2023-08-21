@@ -1,10 +1,10 @@
-//IMPORTANDO CHAVE API DE OUTRO ARQUIVO
-import { key } from "./config.js";
+//4c6cjMgLFIGafGCbJhm7fQ9bpsqfN9HEJbW5XANf
 
 //criar referências ao elemento da pagina
 const frm = document.querySelector("form");
 const data = document.getElementById("inData")
 const resp1 = document.querySelector("h3");
+const foto_atual = document.getElementById("inFotoAtual")
 
 
 //Função para verificar se data é válida
@@ -42,18 +42,34 @@ async function gerarFoto(url) {
 
 //preencher dados
 function preencherDados(response_data){
-    document.getElementById("title").textContent = response_data.title;
-    document.getElementById("date").textContent = response_data.date;
-    document.getElementById("pic").src = response_data.hdurl;
-    document.getElementById("explanation").textContent = response_data.explanation;
+   
+    document.getElementById("inTituloResponse").textContent = response_data.title;
+    document.getElementById("inDataResponse").textContent = response_data.date;
+    document.getElementById("inImage").src = response_data.hdurl;
+    document.getElementById("inExplicacao").textContent= response_data.explanation;
 }
 //limpar formulario
 function limparDados(){
-    document.getElementById("title").textContent = "";
-    document.getElementById("date").textContent = "";
-    document.getElementById("pic").src = "";
-    document.getElementById("explanation").textContent = "";
+    document.getElementById("inTituloResponse").value = "";
+    document.getElementById("inImage").value = "";
+    document.getElementById("inDataResponse").value = "";
+    document.getElementById("inExplicacao").value = "";
 }
+
+
+foto_atual.addEventListener("click",(e) => {
+    //Fetch que retorna JSON
+    //Default da consulta da API é o dia atual
+    fetch('https://api.nasa.gov/planetary/apod?api_key=4c6cjMgLFIGafGCbJhm7fQ9bpsqfN9HEJbW5XANf')
+    .then(response => response.json())
+    .then(data => {
+    console.log(data)
+    preencherDados(data)
+    });
+    
+
+
+})
 
 
 frm.addEventListener("click",(e) => {
@@ -61,7 +77,7 @@ frm.addEventListener("click",(e) => {
     e.preventDefault();
 
     const data_str = String(data.value);
-    const api_key = key()
+    const api_key = "4c6cjMgLFIGafGCbJhm7fQ9bpsqfN9HEJbW5XANf";
 
     
     //String da data
