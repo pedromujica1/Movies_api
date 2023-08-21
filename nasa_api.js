@@ -21,7 +21,6 @@ function VerificarData(data) {
 }
 
 async function gerarFoto(url) {
-    limparDados()
  
 
     //Transformando dados do request em JSON
